@@ -1,0 +1,8 @@
+*   [33md83cdac[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/feature/dashboard[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mfeature/dashboard[m[33m)[m Merge branch 'main' of https://github.com/jaswaladitya1912-hub/StudyNotion
+[31m|[m[32m\[m  
+[31m|[m * [33mc625f92[m Clear environment variables in .env file
+* [32m|[m [33m9456a36[m Adding Dashboard Page
+[32m|[m[32m/[m  
+* [33mc9295fb[m Updated About routing, added new components, and code fixes
+* [33ma80302a[m some update
+* [33mf23c93e[m Initial commit
