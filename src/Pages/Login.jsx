@@ -14,9 +14,3 @@ function Login() {
 }
 
 export default Login
-
-
-// F.E->Pages->template->button(OnClick)->handler function->dispatch(services ke andar ek folder hai jisme ->ApiConnector)->se hum backend ke andr->controller ke andr->jo function hai usko call krega 
-
-
-//Backend mei call services se jaa rhi hai 
