@@ -15,7 +15,9 @@ import PrivateRoute from "./components/core/auth/PrivateRoute";
 import Error from "./Pages/Error";
 import Dashboard from "./Pages/Dashboard";
 import EnrolledCourses from "./components/core/Dashboard/EnrolledCourses";
-
+import { ACCOUNT_TYPE } from "./utils/constants";
+import AddCourse from "./components/core/Dashboard/AddCourse";
+import {user} from './services/operations/profileAPI'
 function App() {
   return (
     <div className="w-screen min-h-screen bg-richblack-900 flex flex-col font-inter">
@@ -81,14 +83,32 @@ function App() {
             </PrivateRoute>
           }
         >
-                <Route path="/dashboard/my-profile" element={<MyProfile />} />
-                {/* <Route path="/dashboard/settings" element={<Setting/>} /> */}
-                <Route path="dashboard/enrolled-courses" element={<EnrolledCourses/>}/>
-          </Route>
+          <Route path="/dashboard/my-profile" element={<MyProfile />} />
+          {/* <Route path="/dashboard/settings" element={<Setting/>} /> */}
+          <Route
+            path="dashboard/enrolled-courses"
+            element={<EnrolledCourses />}
+          />
+        </Route>
         <Route path="/contact" element={<Contact />} />
-  
-        <Route path="*" element={<Error/>}/>
 
+        <Route path="*" element={<Error />} />
+        {
+        user?.accountType === ACCOUNT_TYPE.STUDENT && (
+          <>
+            <Route path="dashboard/cart" element={<Cart />} />
+            <Route
+              path="dashboard/enrolled-courses"
+              element={<EnrolledCourses />}
+            />
+          </>
+        )}
+
+        {user?.accountType === ACCOUNT_TYPE.INSTRUCTOR && (
+          <>
+            <Route path="dashboard/add-course" element={<AddCourse />} />
+          </>
+        )}
       </Routes>
     </div>
   );
