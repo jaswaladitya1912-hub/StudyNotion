@@ -67,7 +67,7 @@ const Home = () => {
                 heading={
                     <div className='text-4xl font-semibold'>
                         Unlock Your
-                        <HighlightText text={"coding potential "}/>
+                        <HighlightText text={"coding potential"}/>
                         with our online courses
                     </div>
                 }
@@ -101,7 +101,7 @@ const Home = () => {
                 heading={
                     <div className='text-4xl font-semibold'>
                         Unlock Your
-                        <HighlightText text={"coding potential "}/>
+                        <HighlightText text={"coding potential"}/>
                         with our online courses
                     </div>
                 }

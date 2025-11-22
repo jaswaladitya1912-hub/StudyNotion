@@ -3,7 +3,6 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Navbar from "./components/common/Navbar";
 import OpenRoute from "./components/core/Auth/OpenRoute";
-
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import ForgotPassword from "./pages/ForgotPassword";
@@ -12,6 +11,10 @@ import VerifyEmail from "./pages/VerifyEmail";
 import About from "./pages/About";
 import Contact from "./Pages/Contact";
 import MyProfile from "./components/core/Dashboard/MyProfile";
+import PrivateRoute from "./components/core/auth/PrivateRoute";
+import Error from "./Pages/Error";
+import Dashboard from "./Pages/Dashboard";
+import EnrolledCourses from "./components/core/Dashboard/EnrolledCourses";
 
 function App() {
   return (
@@ -20,7 +23,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route
-          path="/signup"
+          path="signup"
           element={
             <OpenRoute>
               <Signup />
@@ -28,31 +31,34 @@ function App() {
           }
         />
         <Route
-          path="/login"
+          path="login"
           element={
             <OpenRoute>
               <Login />
             </OpenRoute>
           }
         />
+
         <Route
-          path="/forgot-password"
+          path="forgot-password"
           element={
             <OpenRoute>
               <ForgotPassword />
             </OpenRoute>
           }
         />
+
         <Route
-          path="/verify-email"
+          path="verify-email"
           element={
             <OpenRoute>
               <VerifyEmail />
             </OpenRoute>
           }
         />
+
         <Route
-          path="/update-password/:id"
+          path="update-password/:id"
           element={
             <OpenRoute>
               <UpdatePassword />
@@ -60,9 +66,29 @@ function App() {
           }
         />
 
-        <Route path="/about" element={<About />} />
+        <Route
+          path="about"
+          element={
+            <OpenRoute>
+              <About />
+            </OpenRoute>
+          }
+        />
+        <Route
+          element={
+            <PrivateRoute>
+              <Dashboard />
+            </PrivateRoute>
+          }
+        >
+                <Route path="/dashboard/my-profile" element={<MyProfile />} />
+                {/* <Route path="/dashboard/settings" element={<Setting/>} /> */}
+                <Route path="dashboard/enrolled-courses" element={<EnrolledCourses/>}/>
+          </Route>
         <Route path="/contact" element={<Contact />} />
-        <Route path="/dashboard/my-profile" element={<MyProfile />} />
+  
+        <Route path="*" element={<Error/>}/>
+
       </Routes>
     </div>
   );

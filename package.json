@@ -11,6 +11,7 @@
     "dev": "concurrently -n \"client,server\" -c \"bgBlue,bgYellow\" \"npm run client\" \"npm run server\""
   },
   "dependencies": {
+    "@ramonak/react-progress-bar": "^5.4.0",
     "@reduxjs/toolkit": "^2.10.1",
     "autoprefixer": "^10.4.22",
     "axios": "^1.13.2",
